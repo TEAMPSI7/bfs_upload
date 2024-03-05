@@ -1,12 +1,5 @@
 @import url("../public/fonts/stylesheet.css");
 
-@font-face {
-  font-family: "Twemoji Country Flags";
-  unicode-range: U+1F1E6-1F1FF, U+1F3F4, U+E0062-E0063, U+E0065, U+E0067, U+E006C, U+E006E, U+E0073-E0074, U+E0077, U+E007F;
-  src: url("https://cdn.jsdelivr.net/npm/country-flag-emoji-polyfill@0.1/dist/TwemojiCountryFlags.woff2") format("woff2");
-  font-display: swap;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -85,6 +78,7 @@ body {
   background: #111;
   color: #fff;
   font-family: "F1", "Calps Sans", sans-serif;
+  width: 100%;
 }
 
 .matches-nav {
@@ -99,7 +93,7 @@ body {
 }
 
 .global-container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 2vw 0 2vw;
   box-sizing: content-box;
