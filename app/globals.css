@@ -68,6 +68,17 @@
   }
 }
 
+@layer utilities {
+  .hexagon {
+    clip-path: polygon(50% 0%,
+        100% 25%,
+        100% 75%,
+        50% 100%,
+        0% 75%,
+        0% 25%);
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -110,4 +121,39 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.text-title-gradient {
+  background-image: url("../public/images/bg-text.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: transparent;
+  -webkit-background-clip: text;
+  @apply sm:text-3xl text-xl mb-3;
+  line-height: unset;
+}
+
+.box-border-gradient {
+  background-image: url(../public/images/bg-text.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.TabsTrigger {
+  border-bottom: 2px solid transparent;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.TabsTrigger[data-state='active'] {
+  color: #fff !important;
+  text-decoration: underline;
+}
+
+/* if not active */
+.TabsTrigger:not([data-state='active']) {
+  color: #FF0198;
 }

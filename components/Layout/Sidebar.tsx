@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Icons } from "@/components/icons";
 import Link from "next/link";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function Sidebar({
   open,
@@ -35,16 +36,12 @@ export default function Sidebar({
             open ? "w-60" : "w-20"
           } duration-400 relative h-screen bg-[#201c1c] p-3 transition-all ease-in-out`}
         >
-          <Image
-            alt="test"
-            width={30}
-            height={30}
-            src="/images/bg-text-.png"
-            className={`absolute -right-3 top-9 w-7 cursor-pointer rounded-full border-2 border-indigo-700  ${
-              !open && "rotate-180"
-            }`}
+          <button
+            className="absolute -right-5 top-9 rounded-xl border-2 border-bfs_primary/50 bg-bfs_soft-black p-2.5"
             onClick={() => setOpen(!open)}
-          />
+          >
+            {open ? <ArrowLeft size={16} /> : <ArrowRight size={16} />}
+          </button>
           <div className={`transition-all duration-500${open ? "p-4" : ""}`}>
             <Image
               src="/images/logo.png"
