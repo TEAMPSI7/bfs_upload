@@ -48,11 +48,17 @@ const TeamList = ({
       // even row
       for (let j = 0; j < numItemsPerRow - 1; j++) {
         if (teamIndex < teams.length) {
-          rowItems.push(<Team team={teams[teamIndex]} type={type} />);
+          rowItems.push(
+            <Team
+              key={teams[teamIndex].id}
+              team={teams[teamIndex]}
+              type={type}
+            />,
+          );
           teamIndex++;
         } else {
           // add empty data to fill row
-          rowItems.push(<div />);
+          rowItems.push(<div key={j} />);
         }
       }
     } else {
@@ -60,24 +66,35 @@ const TeamList = ({
       const itemsInRow = Math.min(numItemsPerRow, teams.length - teamIndex + 1);
       for (let j = 0; j < itemsInRow; j++) {
         if (teamIndex < teams.length) {
-          rowItems.push(<Team team={teams[teamIndex]} type={type} />);
+          rowItems.push(
+            <Team
+              key={teams[teamIndex].id}
+              team={teams[teamIndex]}
+              type={type}
+            />,
+          );
           teamIndex++;
         } else {
           // add empty data to fill row
-          rowItems.push(<div className={`w-${12 / numItemsPerRow}/12`} />);
+          rowItems.push(
+            <div key={j} className={`w-${12 / numItemsPerRow}/12`} />,
+          );
         }
       }
     }
 
     rows.push(
-      <div className="flex flex-row flex-wrap justify-center -space-x-2 md:-space-x-3 lg:-space-x-5">
+      <div
+        key={i}
+        className="flex flex-row flex-wrap justify-center -space-x-2 md:-space-x-3 lg:-space-x-5"
+      >
         {rowItems}
       </div>,
     );
   }
 
   return (
-    <div className="mx-auto flex flex-col -space-x- md:-space-x-3 lg:-space-x-5">
+    <div className="-space-x- mx-auto flex flex-col md:-space-x-3 lg:-space-x-5">
       {rows}
     </div>
   );

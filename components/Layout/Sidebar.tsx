@@ -4,6 +4,11 @@ import { useState } from "react";
 import { Icons } from "@/components/icons";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { usePathname } from "next/navigation";
+
+function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(" ");
+}
 
 export default function Sidebar({
   open,
@@ -12,11 +17,12 @@ export default function Sidebar({
   open: boolean;
   setOpen: (open: boolean) => void;
 }) {
+  const path = usePathname();
   const Menus = [
-    { title: "🔴 LIVE TV", icon: "MonitorDot", url: "/", gap: "false" },
+    { title: "🔴 LIVE TV", icon: "MonitorDot", url: "#", gap: "false" },
     { title: "HISTORY", icon: "History", url: "#" },
     { title: "LEAGUE", icon: "Hexagon", url: "#" },
-    { title: "RANKINGS", icon: "Trophy", url: "#" },
+    { title: "RANKINGS", icon: "Trophy", url: "/rankings" },
     { title: "SPONSORSHIPS", icon: "Joystick", url: "#" },
     { title: "GAMEMASTERS", icon: "UserCog", url: "#" },
     { title: "SHOUTCASTERS", icon: "UsersRound", url: "#" },
@@ -32,7 +38,7 @@ export default function Sidebar({
 
       <div className="fixed z-[400] hidden flex-1 md:block">
         <div
-          className={` ${
+          className={`${
             open ? "w-60" : "w-20"
           } duration-400 relative h-screen bg-[#201c1c] p-3 transition-all ease-in-out`}
         >
@@ -43,13 +49,15 @@ export default function Sidebar({
             {open ? <ArrowLeft size={16} /> : <ArrowRight size={16} />}
           </button>
           <div className={`transition-all duration-500${open ? "p-4" : ""}`}>
-            <Image
-              src="/images/logo.png"
-              alt="LOGO"
-              width={1080}
-              height={1080}
-              className="rounded-xl"
-            />
+            <Link href="/">
+              <Image
+                src="/images/logo.png"
+                alt="LOGO"
+                width={1080}
+                height={1080}
+                className="rounded-xl"
+              />
+            </Link>
           </div>
 
           <div className="mt-4 space-y-1">
@@ -60,9 +68,15 @@ export default function Sidebar({
                 <Link
                   href={Menu.url}
                   key={Menu.url}
-                  className={`flex w-full gap-x-2 rounded-lg p-3 transition-colors duration-200 ease-in-out hover:bg-bfs_primary/20
-                  ${!open && "justify-center"}
-                  `}
+                  // className={`flex w-full gap-x-2 rounded-lg p-3 transition-colors duration-200 ease-in-out hover:bg-bfs_primary/20
+                  // ${!open && "justify-center"}]
+                  // `}
+
+                  className={classNames(
+                    path === Menu.url ? "bg-bfs_primary/20" : "",
+                    `flex w-full gap-x-2 rounded-lg p-3 transition-colors duration-200 ease-in-out hover:bg-bfs_primary/20 
+                    ${!open && "justify-center"}`,
+                  )}
                 >
                   <Icon
                     aria-hidden="true"
