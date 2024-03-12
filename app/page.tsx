@@ -1,4 +1,6 @@
 import Teams from "@/components/sections/Teams";
+import ExploreMore from "@/components/sections/exploremore";
+import FAQ from "@/components/sections/faq";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Page() {
@@ -133,7 +135,7 @@ export default function Page() {
             </h1>
 
             <div className="mt-5 rounded-xl bg-[#201c1c] p-7">
-              <div className="divide-bfs_primary/30 flex justify-center divide-x-2 ">
+              <div className="flex flex-col justify-center space-y-5 divide-bfs_primary/30 md:flex-row md:space-y-0 md:divide-x-2 ">
                 <div className="flex-1">
                   <h2 className="text-center text-2xl font-bold text-bfs_secondary">
                     GENERAL RULES
@@ -187,6 +189,14 @@ export default function Page() {
                 </p>
               </div>
             </div>
+          </div>
+
+          <div className="py-10">
+            <FAQ />
+          </div>
+
+          <div className="py-5">
+            <ExploreMore />
           </div>
         </div>
       </section>

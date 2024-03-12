@@ -9,12 +9,15 @@ import SponsorImage from "./SponsorsImage";
 import Image from "next/image";
 import SponsorMarquee from "./SponsorMarquee";
 import { Menu } from "lucide-react";
+import Footer from "../sections/Footer";
+import Navbar from "./Navbar";
 export default function MainLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   const [open, setOpen] = useState(false);
+  const [mobileSidebarOpeb, setMobileSidebarOpen] = useState(false);
 
   const getRandomSponsors = () => {
     const numSponsors = 1;
@@ -28,13 +31,17 @@ export default function MainLayout({
   };
 
   return (
-    <main className="flex h-screen">
+    <main className="h-screen md:flex">
       <Sidebar open={open} setOpen={setOpen} />
 
       <div className="duration-400 h-screen flex-1 transition-all">
         <div className="h-36 md:h-14"></div>
 
-        <div className="fixed top-0 z-10 w-full bg-[#111]">
+        <Navbar
+          sidebarOpen={mobileSidebarOpeb}
+          setSidebarOpen={setMobileSidebarOpen}
+        />
+        <div className="fixed top-0 z-10 w-full bg-bfs_soft-black">
           <div className="block p-4 md:hidden">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -43,12 +50,28 @@ export default function MainLayout({
                   alt="LOGO"
                   width={1080}
                   height={1080}
-                  className="h-16 w-16 object-contain"
+                  className="h-10 w-10 rounded-md object-contain md:h-16 md:w-16"
                 />
-                <h4 className="text-2xl">BattleForSupremacy.TV</h4>
+                <h4 className="md:text-2xl">BattleForSupremacy.TV</h4>
               </div>
 
-              <Menu size={42} />
+              {/* <Menu
+                size={32}
+                strokeWidth={1.5}
+                className="text-bfs_secondary"
+              /> */}
+              <button
+                type="button"
+                className="rounded-md bg-gray-500/10 p-2 hover:scale-105 active:scale-105"
+                onClick={() => setMobileSidebarOpen(true)}
+              >
+                <span className="sr-only">Open sidebar</span>
+                <Menu
+                  size={32}
+                  strokeWidth={1.5}
+                  className="text-bfs_secondary"
+                />
+              </button>
             </div>
           </div>
 
@@ -77,8 +100,8 @@ export default function MainLayout({
           </Marquee>
         </div>
 
-        <main className="mt-4 md:mt-1">{children}</main>
-
+        <section className="mt-4 w-full md:mt-1">{children}</section>
+        <Footer />
         <SponsorMarquee />
       </div>
     </main>

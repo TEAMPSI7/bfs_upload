@@ -23,11 +23,15 @@ export default function Sidebar({
     { title: "HISTORY", icon: "History", url: "#" },
     { title: "LEAGUE", icon: "Hexagon", url: "#" },
     { title: "RANKINGS", icon: "Trophy", url: "/rankings" },
-    { title: "SPONSORSHIPS", icon: "Joystick", url: "#" },
-    { title: "GAMEMASTERS", icon: "UserCog", url: "#" },
-    { title: "SHOUTCASTERS", icon: "UsersRound", url: "#" },
-    { title: "FAQ", icon: "Megaphone", url: "#" },
-    { title: "SPIN", icon: "CircleDotDashed", url: "#" },
+    { title: "SPONSORSHIPS", icon: "Joystick", url: "/sponsorship" },
+    { title: "GAMEMASTERS", icon: "UserCog", url: "/gamemasters" },
+    { title: "SHOUTCASTERS", icon: "UsersRound", url: "/shoutcasters" },
+    { title: "FAQ", icon: "Megaphone", url: "/faqs" },
+    {
+      title: "SPIN",
+      icon: "CircleDotDashed",
+      url: "https://spin.battleforsupremacy.tv/",
+    },
   ];
 
   return (
@@ -68,9 +72,6 @@ export default function Sidebar({
                 <Link
                   href={Menu.url}
                   key={Menu.url}
-                  // className={`flex w-full gap-x-2 rounded-lg p-3 transition-colors duration-200 ease-in-out hover:bg-bfs_primary/20
-                  // ${!open && "justify-center"}]
-                  // `}
 
                   className={classNames(
                     path === Menu.url ? "bg-bfs_primary/20" : "",

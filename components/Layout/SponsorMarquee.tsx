@@ -8,10 +8,10 @@ export default function SponsorMarquee() {
       <div key={String(sponsorImage)} className="mx-2">
         <Image
           src={sponsorImage}
-          width={50}
-          height={50}
+          width={1080}
+          height={1080}
           alt="Sponsor"
-          className="h-8 w-8 object-contain"
+          className="h-10 w-10 object-contain md:h-8 md:w-8"
         />
       </div>
     ));
@@ -20,7 +20,7 @@ export default function SponsorMarquee() {
   return (
     <>
       <div className="h-14"></div>
-      <div className="fixed -bottom-1 flex h-16 w-full items-center">
+      <div className="fixed -bottom-1 flex h-16 w-full items-center md:h-16">
         <Marquee
           className="footer-sponsor flex items-center py-3"
           speed={20}
