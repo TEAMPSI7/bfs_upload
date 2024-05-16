@@ -6,11 +6,6 @@ import Image from "next/image";
 
 const Team = ({ team, type }: { team: any; type: string }) => {
   let img = "";
-  //   if (type === "country") {
-  //     img = `https://raw.githubusercontent.com/teamdao-psi3/esport-team/main/hex-flags/${team.code3}.png`;
-  //   } else {
-  //     img = `https://raw.githubusercontent.com/teamdao-psi3/esport-team/main/BFS/codm/solo/solo-2/${team.id}.png`;
-  //   }
   return (
     <div className="flex w-4/12 items-center sm:w-2/12 ">
       <Image

@@ -4,17 +4,21 @@ import Image from "next/image";
 
 export default function SponsorMarquee() {
   const sponsorsList = () => {
-    return SponsorImage.map((sponsorImage) => (
-      <div key={String(sponsorImage)} className="mx-2">
+    return SponsorImage.map((sponsorImage) => {
+      return (
+      <div key={String(sponsorImage.src)} className="mx-2">
         <Image
           src={sponsorImage}
           width={1080}
           height={1080}
           alt="Sponsor"
           className="h-10 w-10 object-contain md:h-8 md:w-8"
+          onClick={() => SponsorImage.map( s => {
+            console.log("S " + s)
+          })}
         />
       </div>
-    ));
+    )});
   };
 
   return (
@@ -27,7 +31,9 @@ export default function SponsorMarquee() {
           direction="right"
           autoFill
         >
-          <div className="flex w-full items-center">{sponsorsList()}</div>
+          <div onClick={() => SponsorImage.map( s => {
+            console.log("S " + s)
+          })} className="flex w-full items-center">{sponsorsList()}</div>
         </Marquee>
       </div>
     </>

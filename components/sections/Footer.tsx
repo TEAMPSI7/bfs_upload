@@ -10,13 +10,13 @@ export default function Footer() {
             href="#"
             className="font-bold text-bfs_secondary hover:text-red-500"
           >
-            Supreme League
+            🔴 Supreme League
           </Link>
           <Link
             href="#"
             className="font-bold text-bfs_primary hover:text-red-500"
           >
-            Super League
+            🔵 Super League
           </Link>
           <Link
             href="#"
@@ -70,7 +70,7 @@ export default function Footer() {
             href="#"
             className="text-bfs font-bold text-green-500 hover:text-red-500"
           >
-            Standard League
+           🟢 Standard League
           </Link>
         </div>
 

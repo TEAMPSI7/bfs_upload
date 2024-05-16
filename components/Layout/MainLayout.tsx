@@ -5,6 +5,7 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 import Emoji from "../emoji";
 import data from "@/data/solo.json";
+
 import SponsorImage from "./SponsorsImage";
 import Image from "next/image";
 import SponsorMarquee from "./SponsorMarquee";
@@ -20,11 +21,29 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
+const defaultMenu = [
+  { title: "🔴 LIVE TV", icon: "MonitorDot", isDropDown: false, url: "#", gap: "false" },
+  { title: "HISTORY", icon: "History", isDropDown: false, url: "#" },
+  { title: "LEAGUE", icon: "Hexagon", isDropDown: false, url: "#" },
+  { title: "RANKINGS", icon: "Trophy", isDropDown: false, url: "/rankings" },
+  { title: "SPONSORSHIPS", icon: "Joystick", isDropDown: false, url: "/sponsorship" },
+  { title: "GAMEMASTERS", icon: "UserCog", isDropDown: false, url: "/gamemasters" },
+  { title: "SHOUTCASTERS", icon: "UsersRound", isDropDown: false, url: "/shoutcasters" },
+  { title: "FAQ", icon: "Megaphone", isDropDown: false, url: "/faqs" },
+  {
+    title: "SPIN",
+    icon: "CircleDotDashed",
+    isDropDown: false, url: "https://spin.battleforsupremacy.tv/",
+  },
+]
 export default function MainLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  SponsorImage.forEach(s => {
+    console.log("MAP " + String(s.src) + "\n")
+  })
   const path = usePathname();
   const [open, setOpen] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -40,31 +59,17 @@ export default function MainLayout({
     return selected;
   };
 
-  const Menus = [
-    { title: "🔴 LIVE TV", icon: "MonitorDot", url: "#", gap: "false" },
-    { title: "HISTORY", icon: "History", url: "#" },
-    { title: "LEAGUE", icon: "Hexagon", url: "#" },
-    { title: "RANKINGS", icon: "Trophy", url: "/rankings" },
-    { title: "SPONSORSHIPS", icon: "Joystick", url: "/sponsorship" },
-    { title: "GAMEMASTERS", icon: "UserCog", url: "/gamemasters" },
-    { title: "SHOUTCASTERS", icon: "UsersRound", url: "/shoutcasters" },
-    { title: "FAQ", icon: "Megaphone", url: "/faqs" },
-    {
-      title: "SPIN",
-      icon: "CircleDotDashed",
-      url: "https://spin.battleforsupremacy.tv/",
-    },
-  ];
+  const [Menus, setMenus] = React.useState(defaultMenu);
 
   return (
     <main className="h-screen md:flex">
-      <Sidebar open={open} setOpen={setOpen} Menus={Menus} />
+      <Sidebar open={open} setOpen={setOpen} setMenus={setMenus} Menus={Menus} />
 
       <div className="duration-400 h-screen flex-1 transition-all">
         <div className="h-36 md:h-14"></div>
 
         <div className="fixed top-0 z-10 w-full bg-bfs_soft-black">
-          <Transition.Root show={sidebarOpen} as={Fragment}>
+          {/* <Transition.Root show={sidebarOpen} as={Fragment}>
             <Dialog
               as="div"
               className="fixed inset-0 z-40 flex md:hidden"
@@ -151,9 +156,9 @@ export default function MainLayout({
               </Transition.Child>
               <div className="w-14 flex-shrink-0" aria-hidden="true"></div>
             </Dialog>
-          </Transition.Root>
+          </Transition.Root> */}
 
-          <div className="block p-4 md:hidden">
+          {/* <div className="block p-4 md:hidden">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Image
@@ -179,12 +184,9 @@ export default function MainLayout({
                 />
               </button>
             </div>
-          </div>
-          {/* <Navbar
-            Menus={Menus}
-          /> */}
+          </div> */}
 
-          <Marquee className="matches-nav h-13 py-2" autoFill speed={20}>
+          {/* <Marquee className="matches-nav h-13 py-2" autoFill speed={20}>
             {data.series[0].games.group_stage.round_one_group_a.map(
               (item: any) => (
                 <div key={item.name} className="flex items-center">
@@ -206,7 +208,7 @@ export default function MainLayout({
                 </div>
               ),
             )}
-          </Marquee>
+          </Marquee> */}
         </div>
 
         <section className="mt-4 w-full md:mt-1">{children}</section>
