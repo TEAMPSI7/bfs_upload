@@ -1,4 +1,3 @@
-import CodmSoloRanks from "../../components/sections/rankings/CodmSolo";
 import Link from "next/link";
 
 export default function Page() {
@@ -10,17 +9,15 @@ export default function Page() {
             CALL OF DUTY.MOBILE
           </h1>
           <div className="mx-auto mt-4 flex w-fit flex-col items-center justify-center gap-4 rounded-md bg-bfs_soft-black/50 px-6 py-3 md:flex-row">
-            <Link href="/rankings/solo" className="text-xl font-bold text-white underline underline-offset-4">
-              SOLO
+            <Link href="/rankings/solo" className="text-xl font-bold text-bfs_secondary">SOLO</Link>
+            <Link href="/rankings/duo" className="text-xl font-bold text-white underline underline-offset-4">
+              DUO
             </Link>
-            <Link href="/rankings/duo" className="text-xl font-bold text-bfs_secondary">DUO</Link>
             <Link href="/rankings/team" className="text-xl font-bold text-bfs_secondary">TEAM</Link>
             <Link href="/rankings/mult5v5" className="text-xl font-bold text-bfs_secondary">
               5V5 MULTIPLAYER
             </Link>
           </div>
-      
-          <CodmSoloRanks />
         </div>
       </div>
     </div>

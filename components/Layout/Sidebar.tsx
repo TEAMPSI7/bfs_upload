@@ -67,14 +67,14 @@ export default function Sidebar({
         className={`duration-400 hidden transition-all md:block ${open ? "w-60" : "w-20"}`}
       ></div>
 
-      <div className="fixed z-[400] hidden flex-1 md:block">
+        <div className="fixed z-[400] hidden bg-[#201c1c]  flex-1 md:block overflow-y-auto">
         <div
           className={`${
             open ? "w-60" : "w-20"
           } duration-400 relative h-screen bg-[#201c1c] p-3 transition-all ease-in-out`}
         >
           <button
-            className="absolute -right-5 top-9 rounded-xl border-2 border-bfs_primary/50 bg-bfs_soft-black p-2.5"
+            className="absolute right-0 top-9 rounded-xl border-2 border-bfs_primary/50 bg-bfs_soft-black p-2.5"
             onClick={() => setOpen(!open)}
           >
             {open ? <ArrowLeft  onClick={() => setMenus(defaultMenu)} size={16} /> : <ArrowRight onClick={() => setMenus(menuDropDown)} size={16} />}

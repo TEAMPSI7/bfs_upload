@@ -186,7 +186,7 @@ export default function MainLayout({
             </div>
           </div> */}
 
-          {/* <Marquee className="matches-nav h-13 py-2" autoFill speed={20}>
+          <Marquee className="matches-nav h-13 py-2" autoFill speed={20}>
             {data.series[0].games.group_stage.round_one_group_a.map(
               (item: any) => (
                 <div key={item.name} className="flex items-center">
@@ -208,7 +208,7 @@ export default function MainLayout({
                 </div>
               ),
             )}
-          </Marquee> */}
+          </Marquee>
         </div>
 
         <section className="mt-4 w-full md:mt-1">{children}</section>

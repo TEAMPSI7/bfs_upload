@@ -1,4 +1,3 @@
-import CodmSoloRanks from "../../components/sections/rankings/CodmSolo";
 import Link from "next/link";
 
 export default function Page() {
@@ -19,8 +18,6 @@ export default function Page() {
               5V5 MULTIPLAYER
             </Link>
           </div>
-      
-          <CodmSoloRanks />
         </div>
       </div>
     </div>
