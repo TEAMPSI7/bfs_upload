@@ -3,7 +3,8 @@ import starlink from "@/public/images/starlink_1.jpg";
 import * as url from "url";
 import ErrImg from "@/public/images/hex-err.png";
 import Image from "next/image";
-import global_ranks from "../../../data/solo_ranks.json"
+import global_ranks from "../../../data/CODM/solo_ranks.json"
+
 const RactangleTeamFlag = ({
   name,
   flag = "",
@@ -32,82 +33,6 @@ const RactangleTeamFlag = ({
 };
 
 const CodmSoloRanks = () => {
-  // const global_ranks = [
-  //   { rank: 1, name: 2831 },
-  //   { rank: 2, name: 4953 },
-  //   { rank: 3, name: 3099 },
-  //   {
-  //     rank: 4,
-  //     name: 7420,
-  //   },
-  //   { rank: 5, name: 3078 },
-  //   { rank: 6, name: 7734 },
-  //   { rank: 6, name: 8345 },
-  //   {
-  //     rank: 8,
-  //     name: 8169,
-  //   },
-  //   { rank: 8, name: 6485 },
-  //   { rank: 10, name: 7502 },
-  //   { rank: 11, name: 7500 },
-  //   {
-  //     rank: 12,
-  //     name: 7229,
-  //   },
-  //   { rank: 13, name: 4229 },
-  //   { rank: 14, name: 2769 },
-  //   { rank: 15, name: 6572 },
-  //   {
-  //     rank: 16,
-  //     name: 7489,
-  //   },
-  //   { rank: 16, name: 7419 },
-  //   { rank: 18, name: 4229 },
-  //   { rank: 18, name: 6769 },
-  //   {
-  //     rank: 18,
-  //     name: 4857,
-  //   },
-  //   { rank: 21, name: 6994 },
-  //   { rank: 21, name: 6603 },
-  //   { rank: 21, name: 7303 },
-  //   {
-  //     rank: 21,
-  //     name: 7305,
-  //   },
-  //   { rank: 21, name: 8514 },
-  //   { rank: 26, name: 2887 },
-  //   { rank: 26, name: 2749 },
-  //   {
-  //     rank: 26,
-  //     name: 2753,
-  //   },
-  //   { rank: 26, name: 3082 },
-  //   { rank: 26, name: 8346 },
-  //   { rank: 31, name: 6487 },
-  //   {
-  //     rank: 31,
-  //     name: 7220,
-  //   },
-  //   { rank: 31, name: 8389 },
-  //   { rank: 31, name: 6708 },
-  //   { rank: 31, name: 7366 },
-  //   {
-  //     rank: 31,
-  //     name: 7244,
-  //   },
-  //   { rank: 31, name: 8388 },
-  //   { rank: 31, name: 8305 },
-  //   { rank: 31, name: 8375 },
-  //   {
-  //     rank: 31,
-  //     name: 8513,
-  //   },
-  //   { rank: 31, name: 7321 },
-  //   { rank: 31, name: 8641 },
-  //   { name: "" },
-  // ];
-
 
   const Team = ({ team, type }: { team: any; type: string }) => {
     // const img = `https://raw.githubusercontent.com/teamdao-psi3/esport-team/main/BFS/codm/solo-ranks/${team.name}.png`;
@@ -124,15 +49,6 @@ const CodmSoloRanks = () => {
               className="h-full w-full"
               loading={"lazy"}
             />
-
-            {/* <div>
-              {team.name}
-            </div> */}
-
-            {/* <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black">
-                {team.name}
-            </div> */}
-
 
             <div className="absolute -left-4 top-1/3 flex h-[30px] w-[30px] items-center justify-center rounded-full bg-bfs_secondary text-white">
               {team.rank}

@@ -1,0 +1,107 @@
+[
+    {
+        "name": "ECH04",
+        "rank": 1
+    },
+    {
+        "name": "LIMA24",
+        "rank": 1
+    },
+    {
+        "name": "ROMEO4",
+        "rank": 3
+    },
+    {
+        "name": "SIERRA6",
+        "rank": 4
+    },
+    {
+        "name": "YANKEE6",
+        "rank": 5
+    },
+    {
+        "name": "CHARLIE4",
+        "rank": 6
+    },
+    {
+        "name": "UNICORN27",
+        "rank": 7
+    },
+    {
+        "name": "ROMEO27",
+        "rank": 8
+    },
+    {
+        "name": "VICTOR6",
+        "rank": 9
+    },
+    {
+        "name": "CHARLIE21",
+        "rank": 11
+    },
+    {
+        "name": "ROMEO24",
+        "rank": 12
+    },
+    {
+        "name": "SIERRA24",
+        "rank": 13
+    },
+    {
+        "name": "TANGO24",
+        "rank": 14
+    },
+    {
+        "name": "INDIA29",
+        "rank": 15
+    },
+    {
+        "name": "VICTOR24",
+        "rank": 15
+    },
+    {
+        "name": "ZULU24",
+        "rank": 15
+    },
+    {
+        "name": "OSCAR4",
+        "rank": 18
+    },
+    {
+        "name": "WHISKEY26",
+        "rank": 18
+    },
+    {
+        "name": "CHARLIE27",
+        "rank": 20
+    },
+    {
+        "name": "FOXTROT24",
+        "rank": 20
+    },
+    {
+        "name": "NOVEMBER29",
+        "rank": 22
+    },
+    {
+        "name": "ECHO27",
+        "rank": 23
+    },
+    {
+        "name": "WHISKEY24",
+        "rank": 24
+    },
+    {
+        "name": "INDIA18",
+        "rank": 25
+    },
+    {
+        "name": "TANGO17",
+        "rank": 25
+    },
+    {
+        "name": "MIKE27",
+        "rank": 27
+    }
+
+]
