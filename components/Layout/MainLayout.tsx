@@ -41,9 +41,6 @@ export default function MainLayout({
 }: {
   children: React.ReactNode;
 }) {
-  SponsorImage.forEach(s => {
-    console.log("MAP " + String(s.src) + "\n")
-  })
   const path = usePathname();
   const [open, setOpen] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);

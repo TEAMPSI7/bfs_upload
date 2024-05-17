@@ -50,7 +50,7 @@ export default function Sidebar({
 }: {
   open: boolean;
   setOpen: (open: boolean) => void;
-  setMenus: React.Dispatch<React.SetStateAction<Object[]>>;
+  setMenus: any;
   Menus?: any;
 }) {
   const path = usePathname();
