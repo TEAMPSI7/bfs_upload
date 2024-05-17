@@ -25,7 +25,7 @@ const defaultMenu = [
   { title: "🔴 LIVE TV", icon: "MonitorDot", isDropDown: false, url: "#", gap: "false" },
   { title: "HISTORY", icon: "History", isDropDown: false, url: "#" },
   { title: "LEAGUE", icon: "Hexagon", isDropDown: false, url: "#" },
-  { title: "RANKINGS", icon: "Trophy", isDropDown: false, url: "/rankings" },
+  { title: "RANKINGS", icon: "Trophy", isDropDown: false, url: "/rankings/solo" },
   { title: "SPONSORSHIPS", icon: "Joystick", isDropDown: false, url: "/sponsorship" },
   { title: "GAMEMASTERS", icon: "UserCog", isDropDown: false, url: "/gamemasters" },
   { title: "SHOUTCASTERS", icon: "UsersRound", isDropDown: false, url: "/shoutcasters" },
