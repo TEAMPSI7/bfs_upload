@@ -6,17 +6,16 @@ export default function Footer() {
       <div className="footer-container grid justify-between gap-y-5 sm:grid-cols-2 md:grid-cols-3">
         <div className="flex flex-col space-y-3">
           <p className="text-lg font-bold">PROFESSIONAL LEAGUES</p>
-          <Link
-            href="#"
-            className="font-bold text-bfs_secondary hover:text-red-500"
-          >
-            🔴 Supreme League
+          <Link href="#" className="relative font-bold text-bfs_secondary hover:text-red-500">
+            <span className="absolute -left-7">🔴</span>
+            Supreme League
           </Link>
           <Link
             href="#"
-            className="font-bold text-bfs_primary hover:text-red-500"
+            className="relative font-bold text-bfs_primary hover:text-red-500"
           >
-            🔵 Super League
+            <span className="absolute -left-7">🔵</span>
+            Super League
           </Link>
           <Link
             href="#"
@@ -68,9 +67,10 @@ export default function Footer() {
           </Link>
           <Link
             href="#"
-            className="text-bfs font-bold text-green-500 hover:text-red-500"
+            className="relative text-bfs font-bold text-green-500 hover:text-red-500"
           >
-           🟢 Standard League
+            <span className="absolute -left-7">🟢</span>
+            Standard League
           </Link>
         </div>
 
