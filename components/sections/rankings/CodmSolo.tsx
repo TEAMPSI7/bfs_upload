@@ -42,7 +42,7 @@ const CodmSoloRanks = () => {
         {team.name !== "" ? (
           <>
             <Image
-              src={`/images/solo_hex/${team.id}.png`}
+              src={`/images/CODM/solo_hex/${team.id}.png`}
               width={150}
               height={150}
               alt={team.name}

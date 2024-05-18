@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Ranking from "../../../components/sections/rankings/Ranking";
+import global_ranks from "../../../data/CODM/squad_ranks.json"
 export default function Page() {
     return (
       <div className="rankings-page-bg relative -mt-1">
@@ -17,6 +19,7 @@ export default function Page() {
               </Link>
               <Link href="/rankings/mult5v5" className="text-xl font-bold text-bfs_secondary">5V5 MULTIPLAYER</Link>
             </div>
+            <Ranking global_ranks={global_ranks} path_name={"squad_hex"} />
           </div>
         </div>
       </div>

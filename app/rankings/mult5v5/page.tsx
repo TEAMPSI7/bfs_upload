@@ -1,4 +1,7 @@
 import Link from "next/link";
+import Ranking from "../../../components/sections/rankings/Ranking";
+import global_ranks from "../../../data/CODM/5v5_ranks.json"
+
 export default function Page() {
     return (
       <div className="rankings-page-bg relative -mt-1">
@@ -17,6 +20,7 @@ export default function Page() {
                 5V5 MULTIPLAYER
               </Link>
             </div>
+            <Ranking global_ranks={global_ranks} path_name={"5v5_hex"} />
           </div>
         </div>
       </div>

@@ -1,106 +1,106 @@
 [
     {
-        "name": "ECH04",
+        "logo": "ECHO4",
         "rank": 1
     },
     {
-        "name": "LIMA24",
+        "logo": "LIMA24",
         "rank": 1
     },
     {
-        "name": "ROMEO4",
+        "logo": "ROMEO4",
         "rank": 3
     },
     {
-        "name": "SIERRA6",
+        "logo": "SIERRA6",
         "rank": 4
     },
     {
-        "name": "YANKEE6",
+        "logo": "YANKEE6",
         "rank": 5
     },
     {
-        "name": "CHARLIE4",
+        "logo": "CHARLIE4",
         "rank": 6
     },
     {
-        "name": "UNICORN27",
+        "logo": "UNICORN27",
         "rank": 7
     },
     {
-        "name": "ROMEO27",
+        "logo": "ROMEO27",
         "rank": 8
     },
     {
-        "name": "VICTOR6",
+        "logo": "VICTOR6",
         "rank": 9
     },
     {
-        "name": "CHARLIE21",
+        "logo": "CHARLIE21",
         "rank": 11
     },
     {
-        "name": "ROMEO24",
+        "logo": "ROMEO24",
         "rank": 12
     },
     {
-        "name": "SIERRA24",
+        "logo": "SIERRA24",
         "rank": 13
     },
     {
-        "name": "TANGO24",
+        "logo": "TANGO24",
         "rank": 14
     },
     {
-        "name": "INDIA29",
+        "logo": "INDIA29",
         "rank": 15
     },
     {
-        "name": "VICTOR24",
+        "logo": "VICTOR24",
         "rank": 15
     },
     {
-        "name": "ZULU24",
+        "logo": "ZULU24",
         "rank": 15
     },
     {
-        "name": "OSCAR4",
+        "logo": "OSCAR4",
         "rank": 18
     },
     {
-        "name": "WHISKEY26",
+        "logo": "WHISKEY26",
         "rank": 18
     },
     {
-        "name": "CHARLIE27",
+        "logo": "CHARLIE27",
         "rank": 20
     },
     {
-        "name": "FOXTROT24",
+        "logo": "FOXTROT24",
         "rank": 20
     },
     {
-        "name": "NOVEMBER29",
+        "logo": "NOVEMBER29",
         "rank": 22
     },
     {
-        "name": "ECHO27",
+        "logo": "ECHO27",
         "rank": 23
     },
     {
-        "name": "WHISKEY24",
+        "logo": "WHISKEY24",
         "rank": 24
     },
     {
-        "name": "INDIA18",
+        "logo": "INDIA18",
         "rank": 25
     },
     {
-        "name": "TANGO17",
+        "logo": "TANGO17",
         "rank": 25
     },
     {
-        "name": "MIKE27",
+        "logo": "MIKE27",
         "rank": 27
     }
 
