@@ -1,4 +1,6 @@
+import CodmTeam from "@/components/sections/rankings/CodmTeam";
 import Link from "next/link";
+import global_ranks from "../../../data/CODM/duo_ranks.json"
 
 export default function Page() {
   return (
@@ -18,6 +20,7 @@ export default function Page() {
               5V5 MULTIPLAYER
             </Link>
           </div>
+          <CodmTeam global_ranks={global_ranks} path_name={"duo_hex"} />
         </div>
       </div>
     </div>

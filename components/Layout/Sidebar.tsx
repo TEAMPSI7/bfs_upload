@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, ChevronRight  } from "lucide-react";
 import { usePathname } from "next/navigation";
 
+
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
@@ -60,6 +61,7 @@ export default function Sidebar({
     { title: "🟢 STANDARD", icon: "MonitorDot", url: "#", gap: "false" }
   ]
   );
+
   const [isClicked, setIsClicked] = useState(false);
   return (
     <>

@@ -3,7 +3,9 @@ import ExploreMore from "@/components/sections/exploremore";
 import FAQ from "@/components/sections/faq";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+
 export default function Page() {
+ 
   return (
     <>
       <section className="m-2">

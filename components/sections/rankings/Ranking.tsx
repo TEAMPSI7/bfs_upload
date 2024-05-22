@@ -11,7 +11,7 @@ const Team = ({ team, type, path_name }: { team: any; type: string, path_name: s
   return (
     <div className="relative flex w-4/12 flex-col items-center sm:w-2/12 ">
       {team.name !== "" ? (
-        <div className='w-[210px] h-[210px]'>
+        <div className="w-full max-w-[210px] h-auto sm:max-w-[210px]">
           <Image
             src={`/images/CODM/${path_name}/${team.logo}.png`}
             width={200}
@@ -21,7 +21,7 @@ const Team = ({ team, type, path_name }: { team: any; type: string, path_name: s
             loading={"lazy"}
           />
 
-          <div className="absolute -left-4 top-1/3 flex h-[30px] w-[30px] items-center justify-center rounded-full bg-bfs_secondary text-white">
+          <div className="absolute -left-2 sm:-left-1  top-1/3 flex h-[30px] w-[30px] items-center justify-center rounded-full bg-bfs_secondary text-white">
             {team.rank}
           </div>
         </div>
@@ -99,7 +99,7 @@ const Ranking = ({global_ranks, path_name}:any) => {
           </div>
 
           <div className="block sm:hidden">
-            <TeamList teams={global_ranks} numItemsPerRow={3} type="player" />
+            <TeamList teams={global_ranks} path_name={path_name} numItemsPerRow={3} type="player" />
           </div>
         </div>
       </div>

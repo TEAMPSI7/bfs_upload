@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Ranking from "../../../components/sections/rankings/Ranking";
 import global_ranks from "../../../data/CODM/squad_ranks.json"
+import CodmTeam from "@/components/sections/rankings/CodmTeam";
 export default function Page() {
     return (
       <div className="rankings-page-bg relative -mt-1">
