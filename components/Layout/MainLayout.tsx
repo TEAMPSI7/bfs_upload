@@ -65,7 +65,7 @@ export default function MainLayout({
         <div className="h-36 md:h-14"></div>
 
         <div className="fixed top-0 z-10 w-full bg-bfs_soft-black">
-          {/* <Transition.Root show={sidebarOpen} as={Fragment}>
+          <Transition.Root show={sidebarOpen} as={Fragment}>
             <Dialog
               as="div"
               className="fixed inset-0 z-40 flex md:hidden"
@@ -152,9 +152,9 @@ export default function MainLayout({
               </Transition.Child>
               <div className="w-14 flex-shrink-0" aria-hidden="true"></div>
             </Dialog>
-          </Transition.Root> */}
+          </Transition.Root>
 
-          {/* <div className="block p-4 md:hidden">
+          <div className="block p-4 md:hidden">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Image
@@ -180,7 +180,7 @@ export default function MainLayout({
                 />
               </button>
             </div>
-          </div> */}
+          </div>
 
           <Marquee className="matches-nav h-13 py-2" autoFill speed={20}>
             {data.series[0].games.group_stage.round_one_group_a.map(
