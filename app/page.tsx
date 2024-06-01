@@ -9,9 +9,9 @@ export default function Page() {
   return (
     <>
       <section className="m-2">
-        <div className="flex h-[400px] items-center justify-center bg-bfs_primary/5 md:h-[800px]">
-          <h1>Video Container Here</h1>
-        </div>
+        <video className="h-fit w-full" autoPlay loop>
+        <source src="/videos/mountain-dew.mp4" type="video/mp4" />
+      </video>
         <div className="global-container !py-5">
           <div className="mt-5">
             <h1 className="text-title-gradient text-center text-xl font-bold md:text-3xl">
