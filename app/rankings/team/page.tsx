@@ -1,8 +1,30 @@
+"use client"
 import Link from "next/link";
 import Ranking from "../../../components/sections/rankings/Ranking";
 import global_ranks from "../../../data/CODM/squad_ranks.json"
 import CodmTeam from "@/components/sections/rankings/CodmTeam";
+import { useEffect, useState } from "react";
+import axios from "axios";
 export default function Page() {
+  const [global_ranks, setGlobalRanks] = useState({})
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://script.google.com/macros/s/AKfycbyG6MHef2e5PHvICcKZrqmpNUtio8cjRgxz2nK1gVDSAGztTBZ5yXt59BZQJVEwft_t/exec?url=/squad-global'
+        );
+        console.log("RESPONSE ", response);
+
+        // Slice the response data to get items from index 1 to 89 (2nd to 90th items)
+        const slicedData = response.data.slice(0, 91);
+        console.log("SLICED ", slicedData)
+        setGlobalRanks(slicedData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
     return (
       <div className="rankings-page-bg relative -mt-1">
         <div className="bg-black/50 py-10">

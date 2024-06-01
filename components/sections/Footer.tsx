@@ -1,10 +1,10 @@
 import Link from "next/link";
-
+import "../CSS/footer.css"
 export default function Footer() {
   return (
     <div className="bg-[#201c1c] py-5">
-      <div className="footer-container grid justify-between gap-y-5 sm:grid-cols-2 md:grid-cols-3">
-        <div className="flex flex-col space-y-3">
+      <div className="footer-container grid justify-between gap-y-5 sm:grid-cols-2 md:grid-cols-3 ml-2rem">
+        <div className="flex flex-col space-y-3 ">
           <p className="text-lg font-bold">PROFESSIONAL LEAGUES</p>
           <Link href="#" className="relative font-bold text-bfs_secondary hover:text-red-500">
             <span className="absolute -left-7">🔴</span>

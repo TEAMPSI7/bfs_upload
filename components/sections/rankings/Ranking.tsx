@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import { useContext, useEffect, useState } from "react";
 import starlink from "@/public/images/starlink_1.jpg";
@@ -13,10 +15,10 @@ const Team = ({ team, type, path_name }: { team: any; type: string, path_name: s
       {team.name !== "" ? (
         <div className="w-full max-w-[210px] h-auto sm:max-w-[210px]">
           <Image
-            src={`/images/CODM/${path_name}/${team.logo}.png`}
+            src={`/images/CODM/${path_name}/${team.playerId}.png`}
             width={200}
             height={200}
-            alt={team.logo}
+            alt={team.playerId}
             className="h-full w-full"
             loading={"lazy"}
           />
@@ -84,13 +86,17 @@ const TeamList = ({ teams, numItemsPerRow, type, path_name }: any) => {
 };
 
 const Ranking = ({global_ranks, path_name}:any) => {
+  const date = new Date();
+  const formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  console.log(formattedDate);
+  const [updatedDate, setUpdatedData] = useState(formattedDate.toUpperCase())
   return (
     <>
       <div className="mt-4 flex flex-col items-center rounded-lg bg-bfs_soft-black/50 p-4">
         <h1 className="text-title-gradient text-center text-xl font-bold md:text-3xl">
           POWER RANKINGS SOLO - BATTLE ROYALE
         </h1>
-        <p className="text-lg text-bfs_secondary">AS OF MAY 12,2023</p>
+        <p className="text-lg text-bfs_secondary">AS OF {updatedDate}</p>
       </div>
       <div className="card rounded-md p-3">
         <div>

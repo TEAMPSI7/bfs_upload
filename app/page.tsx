@@ -32,7 +32,7 @@ export default function Page() {
               <h3 className="text-3xl font-bold text-bfs_secondary">100</h3>
             </div>
           </div>
-          <div className="mt-20">
+          {/* <div className="mt-20">
             <h1 className="text-title-gradient text-center text-xl font-bold md:text-3xl">
               THE BIGGEST CODM LEAGUE
             </h1>
@@ -129,7 +129,7 @@ export default function Page() {
                 </TabsContent>
               </Tabs>
             </div>
-          </div>
+          </div> */}
 
           <div className="mt-20">
             <h1 className="text-title-gradient text-center text-xl font-bold md:text-3xl">
@@ -162,7 +162,7 @@ export default function Page() {
                 </div>
                 <div className="flex-1">
                   <h2 className="text-center text-2xl font-bold text-bfs_secondary">
-                    PRIZE RULES
+                    PRIZE DISTRIBUTION
                   </h2>
                   <p className="ml-3 mt-3">
                     🟢 Top 1 $48 <br />

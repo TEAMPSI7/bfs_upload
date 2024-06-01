@@ -1,106 +1,106 @@
 [
     {
-        "logo": "ECHO4",
+        "playerId": "ECHO4",
         "rank": 1
     },
     {
-        "logo": "LIMA24",
+        "playerId": "LIMA24",
         "rank": 1
     },
     {
-        "logo": "ROMEO4",
+        "playerId": "ROMEO4",
         "rank": 3
     },
     {
-        "logo": "SIERRA6",
+        "playerId": "SIERRA6",
         "rank": 4
     },
     {
-        "logo": "YANKEE6",
+        "playerId": "YANKEE6",
         "rank": 5
     },
     {
-        "logo": "CHARLIE4",
+        "playerId": "CHARLIE4",
         "rank": 6
     },
     {
-        "logo": "UNICORN27",
+        "playerId": "UNICORN27",
         "rank": 7
     },
     {
-        "logo": "ROMEO27",
+        "playerId": "ROMEO27",
         "rank": 8
     },
     {
-        "logo": "VICTOR6",
+        "playerId": "VICTOR6",
         "rank": 9
     },
     {
-        "logo": "CHARLIE21",
+        "playerId": "CHARLIE21",
         "rank": 11
     },
     {
-        "logo": "ROMEO24",
+        "playerId": "ROMEO24",
         "rank": 12
     },
     {
-        "logo": "SIERRA24",
+        "playerId": "SIERRA24",
         "rank": 13
     },
     {
-        "logo": "TANGO24",
+        "playerId": "TANGO24",
         "rank": 14
     },
     {
-        "logo": "INDIA29",
+        "playerId": "INDIA29",
         "rank": 15
     },
     {
-        "logo": "VICTOR24",
+        "playerId": "VICTOR24",
         "rank": 15
     },
     {
-        "logo": "ZULU24",
+        "playerId": "ZULU24",
         "rank": 15
     },
     {
-        "logo": "OSCAR4",
+        "playerId": "OSCAR4",
         "rank": 18
     },
     {
-        "logo": "WHISKEY26",
+        "playerId": "WHISKEY26",
         "rank": 18
     },
     {
-        "logo": "CHARLIE27",
+        "playerId": "CHARLIE27",
         "rank": 20
     },
     {
-        "logo": "FOXTROT24",
+        "playerId": "FOXTROT24",
         "rank": 20
     },
     {
-        "logo": "NOVEMBER29",
+        "playerId": "NOVEMBER29",
         "rank": 22
     },
     {
-        "logo": "ECHO27",
+        "playerId": "ECHO27",
         "rank": 23
     },
     {
-        "logo": "WHISKEY24",
+        "playerId": "WHISKEY24",
         "rank": 24
     },
     {
-        "logo": "INDIA18",
+        "playerId": "INDIA18",
         "rank": 25
     },
     {
-        "logo": "TANGO17",
+        "playerId": "TANGO17",
         "rank": 25
     },
     {
-        "logo": "MIKE27",
+        "playerId": "MIKE27",
         "rank": 27
     }
 

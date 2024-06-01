@@ -9,19 +9,19 @@ const Team = ({ team, type, path_name }: { team: any; type: string, path_name: s
   // const img = `https://raw.githubusercontent.com/teamdao-psi3/esport-team/main/BFS/codm/solo-ranks/${team.name}.png`;
 
   return (
-    <div  className={`relative flex w-4/12 flex-col items-center sm:w-2/12 ${team.logo === "emptyy" ? "hidden lg:block" : ""}`}>
+    <div  className={`relative flex w-4/12 flex-col items-center sm:w-2/12 ${team.playerId === "emptyy" ? "hidden lg:block" : ""}`}>
       {team.name !== "" ? (
         <div className="w-full max-w-[210px] h-auto sm:max-w-[210px]">
           <Image
-            src={`/images/CODM/${path_name}/${team.logo}.png`}
+            src={`/images/CODM/${path_name}/${team.playerId != "" ? team.playerId  : "hex-err"}.png`}
             width={200}
             height={200}
-            alt={team.logo === "emptyy" ? "" : team.logo}
+            alt={team.playerId === "emptyy" ? "" : team.playerId}
             className="h-full w-full"
             loading={"lazy"}
           />
 
-          {team.logo != "emptyy" && <div className="absolute -left-2 sm:-left-1  top-1/3 flex h-[30px] w-[30px] items-center justify-center rounded-full bg-bfs_secondary text-white">
+          {team.playerId != "emptyy" && <div className="absolute -left-2 sm:-left-1  top-1/3 flex h-[30px] w-[30px] items-center justify-center rounded-full bg-bfs_secondary text-white">
             {team.rank}
           </div>}
         </div>
@@ -39,7 +39,7 @@ const TeamList = ({ teams, numItemsPerRow, type, path_name }: any) => {
   let teamIndex = 0;
   let rows = [];
   const dummyTeamData = { 
-    logo: "emptyy",
+    playerId: "emptyy",
     rank: 5
   }
 
@@ -90,13 +90,17 @@ const TeamList = ({ teams, numItemsPerRow, type, path_name }: any) => {
 };
 
 const Ranking = ({global_ranks, path_name}:any) => {
+  const date = new Date();
+  const formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  console.log(formattedDate);
+  const [updatedDate, setUpdatedData] = useState(formattedDate.toUpperCase())
   return (
     <>
       <div className="mt-4 flex flex-col items-center rounded-lg bg-bfs_soft-black/50 p-4">
         <h1 className="text-title-gradient text-center text-xl font-bold md:text-3xl">
           POWER RANKINGS SOLO - BATTLE ROYALE
         </h1>
-        <p className="text-lg text-bfs_secondary">AS OF MAY 12,2023</p>
+        <p className="text-lg text-bfs_secondary">AS OF {updatedDate}</p>
       </div>
       <div className="card rounded-md p-3">
         <div>

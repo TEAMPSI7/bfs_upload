@@ -1,9 +1,7 @@
+"use client"
 import { useContext, useEffect, useState } from "react";
-import starlink from "@/public/images/starlink_1.jpg";
-import * as url from "url";
-import ErrImg from "@/public/images/hex-err.png";
 import Image from "next/image";
-import global_ranks from "../../../data/CODM/solo_ranks.json"
+import axios from 'axios';
 
 const RactangleTeamFlag = ({
   name,
@@ -33,23 +31,24 @@ const RactangleTeamFlag = ({
 };
 
 const CodmSoloRanks = () => {
-
+  const [global_ranks, setGlobalRanks] = useState([]);
+  const date = new Date();
+  const formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  console.log(formattedDate);
+  const [updatedDate, setUpdatedData] = useState(formattedDate.toUpperCase())
   const Team = ({ team, type }: { team: any; type: string }) => {
-    // const img = `https://raw.githubusercontent.com/teamdao-psi3/esport-team/main/BFS/codm/solo-ranks/${team.name}.png`;
-
     return (
-      <div className="relative flex w-4/12 flex-col items-center sm:w-2/12 ">
+      <div className="relative flex w-4/12 flex-col items-center sm:w-2/12">
         {team.name !== "" ? (
           <>
             <Image
-              src={`/images/CODM/solo_hex/${team.id}.png`}
+              src={`/images/CODM/solo_hex/${team.playerId}.png`}
               width={150}
               height={150}
               alt={team.name}
               className="h-full w-full"
               loading={"lazy"}
             />
-
             <div className="absolute -left-4 top-1/3 flex h-[30px] w-[30px] items-center justify-center rounded-full bg-bfs_secondary text-white">
               {team.rank}
             </div>
@@ -61,59 +60,7 @@ const CodmSoloRanks = () => {
     );
   };
 
-  const GenPyramid = ({ global_ranks }: any) => {
-    const totalItems = 12;
-    const totalRows = 5;
-    const pyramid = [];
-    let currentItem = 0;
-    const itemsPerRow = [];
-    let remainingItems = totalItems;
-    for (let i = 1; i <= totalRows; i++) {
-      const items = Math.min(i, remainingItems);
-      itemsPerRow.push(items);
-      remainingItems -= items;
-    }
-
-    // Generate the pyramid rows
-    let index = 0;
-    for (let row = 0; row < totalRows; row++) {
-      const items = [];
-      for (let col = 0; col < itemsPerRow[row]; col++) {
-        if (currentItem < totalItems) {
-          const rank = global_ranks[currentItem];
-          items.push(
-            <RactangleTeamFlag
-              key={index}
-              name={rank?.name}
-              flag={rank?.country}
-              rank={rank?.rank}
-              className="w-full sm:w-[70%]"
-            />,
-          );
-          currentItem++;
-          index++;
-        }
-      }
-      pyramid.push(
-        <div
-          key={row}
-          className={`flex  ${row === 5 - 1 ? "justify-evenly sm:justify-between" : "justify-center"} ${row > 0 && "-mt-3 sm:-mt-10"}`}
-        >
-          {items}
-        </div>,
-      );
-    }
-
-    // Render the pyramid container
-    return (
-      <div className="pyramid-container m-auto max-w-[300px] sm:max-w-full">
-        {pyramid}
-      </div>
-    );
-  };
-
   const TeamList = ({ teams, numItemsPerRow, type }: any) => {
-    // const totalRows = Math.ceil(teams.length / numItemsPerRow);
     const totalRows =
       Math.ceil(teams.length / numItemsPerRow) +
       Math.ceil((teams.length % numItemsPerRow) / 2);
@@ -128,48 +75,73 @@ const CodmSoloRanks = () => {
         // even row
         for (let j = 0; j < numItemsPerRow - 1; j++) {
           if (teamIndex < teams.length) {
-            rowItems.push(<Team team={teams[teamIndex]} type={type} />);
+            rowItems.push(
+              <Team key={teams[teamIndex].playerId} team={teams[teamIndex]} type={type} />
+            );
             teamIndex++;
           } else {
             // add empty data to fill row
-            rowItems.push(<div />);
+            rowItems.push(<div key={`empty-${teamIndex}`} />);
           }
         }
       } else {
         // odd row
         const itemsInRow = Math.min(
           numItemsPerRow,
-          teams.length - teamIndex + 1,
+          teams.length - teamIndex + 1
         );
 
         for (let j = 0; j < itemsInRow; j++) {
           if (teamIndex < teams.length) {
-            rowItems.push(<Team team={teams[teamIndex]} type={type} />);
+            rowItems.push(
+              <Team key={teams[teamIndex].playerId} team={teams[teamIndex]} type={type} />
+            );
             teamIndex++;
           } else {
             // add empty data to fill row
-            rowItems.push(<div className={`w-${12 / numItemsPerRow}/12`} />);
+            rowItems.push(
+              <div key={`empty-${teamIndex}`} className={`w-${12 / numItemsPerRow}/12`} />
+            );
           }
         }
       }
 
       rows.push(
-        <div className="flex flex-row gap-9 flex-wrap justify-center">
+        <div key={`row-${i}`} className="flex flex-row gap-9 flex-wrap justify-center">
           {rowItems}
-        </div>,
+        </div>
       );
     }
 
     return <div className="wrapper-teams-list-hex mx-auto">{rows}</div>;
   };
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://script.google.com/macros/s/AKfycbyG6MHef2e5PHvICcKZrqmpNUtio8cjRgxz2nK1gVDSAGztTBZ5yXt59BZQJVEwft_t/exec?url=/solo'
+        );
+        console.log("RESPONSE ", response);
+
+        // Slice the response data to get items from index 1 to 89 (2nd to 90th items)
+        const slicedData = response.data.slice(0, 91);
+        console.log("SLICED ", slicedData)
+        setGlobalRanks(slicedData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
+  
   return (
     <>
       <div className="mt-4 flex flex-col items-center rounded-lg bg-bfs_soft-black/50 p-4">
         <h1 className="text-title-gradient text-center text-xl font-bold md:text-3xl">
           POWER RANKINGS SOLO - BATTLE ROYALE
         </h1>
-        <p className="text-lg text-bfs_secondary">AS OF MAY 12,2023</p>
+        <p className="text-lg text-bfs_secondary">AS OF {updatedDate}</p>
       </div>
       <div className="card rounded-md p-3">
         <div>
@@ -185,4 +157,5 @@ const CodmSoloRanks = () => {
     </>
   );
 };
+
 export default CodmSoloRanks;
