@@ -120,7 +120,7 @@ const CodmSoloRanks = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https://script.google.com/macros/s/AKfycbyG6MHef2e5PHvICcKZrqmpNUtio8cjRgxz2nK1gVDSAGztTBZ5yXt59BZQJVEwft_t/exec?url=/solo'
+          'https://script.google.com/macros/s/AKfycbxR9BgfPnz3MT_9OG9gP1RkvHp1XHDUzhUQc0tQbwGXnTA2cYs9tpginIUyofHUV31R/exec?url=/solo'
         );
         console.log("RESPONSE ", response);
 
