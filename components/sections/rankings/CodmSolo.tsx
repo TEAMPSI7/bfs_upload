@@ -47,7 +47,12 @@ const CodmSoloRanks = () => {
               height={150}
               alt={team.name}
               className="h-full w-full"
-              loading={"lazy"}
+              loading="lazy"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.onerror = null; // Prevent infinite loop
+                target.src = '/images/CODM/solo_hex/hex_err.png';
+              }}
             />
             <div className="absolute -left-4 top-1/3 flex h-[30px] w-[30px] items-center justify-center rounded-full bg-bfs_secondary text-white">
               {team.rank}

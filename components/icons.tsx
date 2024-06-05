@@ -8,6 +8,7 @@ import {
   MonitorDot,
   PanelLeftClose,
   PanelLeftOpen,
+  Donut,
   Trophy,
   UserCog,
   UsersRound,
@@ -15,6 +16,7 @@ import {
 
 export const Icons = {
   MonitorDot: MonitorDot,
+  Donut: Donut,
   History: History,
   Hexagon: Hexagon,
   Trophy: Trophy,

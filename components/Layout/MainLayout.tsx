@@ -30,6 +30,7 @@ const defaultMenu = [
   { title: "GAMEMASTERS", icon: "UserCog", isDropDown: false, url: "/gamemasters" },
   { title: "SHOUTCASTERS", icon: "UsersRound", isDropDown: false, url: "/shoutcasters" },
   { title: "FAQ", icon: "Megaphone", isDropDown: false, url: "/faqs" },
+  { title: "TOPUP", icon: "Donut", isDropDown: false, url: "/topup" },
   {
     title: "SPIN",
     icon: "CircleDotDashed",
