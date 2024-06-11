@@ -4,8 +4,8 @@ import { useState } from "react";
 
 const Page = () => {
     const [games, setGames] = useState([
-        { title: "Call of Duty Mobile", icon: "", isDropDown: true, url: "/tournament/codm", gap: "false" },
         { title: "Honor of Kings", icon: "", isDropDown: true, url: "#", gap: "false" },
+        { title: "Call of Duty Mobile", icon: "", isDropDown: true, url: "/tournament/codm", gap: "false" },
         { title: "Fortnite", icon: "", isDropDown: true, url: "#", gap: "false" },
         { title: "GTA:V", icon: "", isDropDown: true, url: "#", gap: "false" }
     ])

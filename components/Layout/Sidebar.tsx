@@ -21,6 +21,7 @@
     { title: "GAMEMASTERS", icon: "UserCog", isDropDown: false, url: "/gamemasters" },
     { title: "SHOUTCASTERS", icon: "UsersRound", isDropDown: false, url: "/shoutcasters" },
     { title: "FAQ", icon: "Megaphone", isDropDown: false, url: "/faqs" },
+    { title: "TOPUP", icon: "Donut", isDropDown: false, url: "/topup" },
     {
       title: "SPIN",
       icon: "CircleDotDashed",
@@ -78,7 +79,7 @@
           setMenus([
             { title: "🔴 LIVE TV", icon: "MonitorDot", isDropDown: false, url: "#", gap: "false" },
             { title: "HISTORY", icon: "History", isDropDown: false, url: "#" },
-            { title: "TOURNAMENT", icon: "Swords", isDropDown: true, url: "/tournament" },
+            { title: "TOURNAMENT", icon: "Swords", isDropDown: true, url: "" },
             { title: "LEAGUE", icon: "Hexagon", isDropDown: true, url: "#" },
             { title: "🔴 SUPREME", icon: "", isDropDown: true, url: "#", gap: "false" },
             { title: "🔵 SUPER", icon: "", isDropDown: true, url: "#", gap: "false" },
@@ -88,6 +89,7 @@
             { title: "GAMEMASTERS", icon: "UserCog", isDropDown: false, url: "/gamemasters" },
             { title: "SHOUTCASTERS", icon: "UsersRound", isDropDown: false, url: "/shoutcasters" },
             { title: "FAQ", icon: "Megaphone", isDropDown: false, url: "/faqs" },
+            { title: "TOPUP", icon: "Donut", isDropDown: false, url: "/topup" },
             {
               title: "SPIN",
               icon: "CircleDotDashed",
@@ -98,9 +100,9 @@
           setMenus([
             { title: "🔴 LIVE TV", icon: "MonitorDot", isDropDown: false, url: "#", gap: "false" },
             { title: "HISTORY", icon: "History", isDropDown: false, url: "#" },
-            { title: "TOURNAMENT", icon: "Swords", isDropDown: true, url: "/tournament" },
+            { title: "TOURNAMENT", icon: "Swords", isDropDown: true, url: "" },
+            { title: "Honor of Kings", icon: "", isDropDown: true, url: "/tournament/hok", gap: "false" },
             { title: "Call of Duty Mobile", icon: "", isDropDown: true, url: "#", gap: "false" },
-            { title: "Honor of Kings", icon: "", isDropDown: true, url: "#", gap: "false" },
             { title: "Fortnite", icon: "", isDropDown: true, url: "#", gap: "false" },
             { title: "GTA:V", icon: "", isDropDown: true, url: "#", gap: "false" },
             { title: "LEAGUE", icon: "Hexagon", isDropDown: true, url: "#" },
@@ -109,6 +111,7 @@
             { title: "GAMEMASTERS", icon: "UserCog", isDropDown: false, url: "/gamemasters" },
             { title: "SHOUTCASTERS", icon: "UsersRound", isDropDown: false, url: "/shoutcasters" },
             { title: "FAQ", icon: "Megaphone", isDropDown: false, url: "/faqs" },
+            { title: "TOPUP", icon: "Donut", isDropDown: false, url: "/topup" },
             {
               title: "SPIN",
               icon: "CircleDotDashed",
