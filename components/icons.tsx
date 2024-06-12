@@ -12,10 +12,12 @@ import {
   Trophy,
   UserCog,
   UsersRound,
+  Swords,
 } from 'lucide-react';
 
 export const Icons = {
   MonitorDot: MonitorDot,
+  Swords : Swords,
   Donut: Donut,
   History: History,
   Hexagon: Hexagon,
@@ -25,4 +27,5 @@ export const Icons = {
   UsersRound: UsersRound,
   Megaphone: Megaphone,
   CircleDotDashed: CircleDotDashed,
+  "": ""
 };
