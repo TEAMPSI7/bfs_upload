@@ -24,7 +24,7 @@ function classNames(...classes: string[]) {
 const defaultMenu = [
   { title: "🔴 LIVE TV", icon: "MonitorDot", isDropDown: false, url: "#", gap: "false" },
   { title: "HISTORY", icon: "History", isDropDown: false, url: "#" },
-  { title: "TOURNAMENT", icon: "Swords", isDropDown: false, url: "/tournament" },
+  { title: "TOURNAMENT", icon: "Swords", isDropDown: false, url: "" },
   { title: "LEAGUE", icon: "Hexagon", isDropDown: false, url: "#" },
   { title: "RANKINGS", icon: "Trophy", isDropDown: false, url: "/rankings/solo" },
   { title: "SPONSORSHIPS", icon: "Joystick", isDropDown: false, url: "/sponsorship" },
