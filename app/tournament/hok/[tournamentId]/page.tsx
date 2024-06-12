@@ -1,28 +1,26 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import Link from "next/link";
-import Image from "next/image";
 import axios from 'axios';
+import Image from 'next/image';
 
 interface Participant {
   teamName?: string;  // teamName is optional
   playerId: string;
   name: string;
-  country: string
+  country: string;
   // other properties of Participant
 }
 
-// Sample boxes data (You can replace it with actual data if needed)
-const boxes = [
-  { id: 1, content: "ABCF", teams: ["ASD", "ASD", "ASD", "ASD", "ASD"] },
-  { id: 2, content: "EFG3", teams: ["ASD", "ASD", "ASD", "ASD", "ASD"] },
-  { id: 3, content: "ASD23", teams: ["ASD", "ASD", "ASD", "ASD", "ASD"] },
-  { id: 4, content: "GDSF23", teams: ["ASD", "ASD", "ASD", "ASD", "ASD"] },
-  { id: 5, content: "ECHO23", teams: ["ASD", "ASD", "ASD", "ASD", "ASD"] },
-  { id: 6, content: "FOX49", teams: ["ASD", "ASD", "ASD", "ASD", "ASD"] },
-  { id: 7, content: "EZA12", teams: ["ASD", "ASD", "ASD", "ASD", "ASD"] },
-  { id: 8, content: "QWE23", teams: ["ASD", "ASD", "ASD", "ASD", "ASD"] },
-];
+
+
+const countryToEmoji = (countryCode: string) => {
+  const codePoints = countryCode
+    .toUpperCase()
+    .split('')
+    .map(char => 127397 + char.charCodeAt(0));
+  return String.fromCodePoint(...codePoints);
+};
 
 const Page = () => {
   const [participants, setParticipants] = useState<Participant[]>([]);
@@ -96,7 +94,7 @@ const Page = () => {
                 <div className="hidden group-hover:block bg-white bg-opacity-50 p-4">
                   {teams[teamName].map((player, index) => (
                     <div key={player.playerId + index} className="text-black flex space-x-2 hover:border-b hover:border-black">
-                      <p>{player.country}</p>
+                      <p>{countryToEmoji(player.country)}</p>
                       <p>{player.playerId}</p>
                       <p>{player.name}</p>
                     </div>
