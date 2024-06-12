@@ -4,6 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import axios from 'axios';
 
+interface Participant {
+  teamName?: string;  // teamName is optional
+  playerId: string;
+  name: string;
+  country: string
+  // other properties of Participant
+}
+
 // Sample boxes data (You can replace it with actual data if needed)
 const boxes = [
   { id: 1, content: "ABCF", teams: ["ASD", "ASD", "ASD", "ASD", "ASD"] },
@@ -17,7 +25,7 @@ const boxes = [
 ];
 
 const Page = () => {
-  const [participants, setParticipants] = useState([]);
+  const [participants, setParticipants] = useState<Participant[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,7 +49,7 @@ const Page = () => {
     }
     acc[teamName].push(participant);
     return acc;
-  }, {});
+  }, {} as { [key: string]: Participant[] });
 
   return (
     <div className="w-4/5 mx-auto my-10 flex flex-col space-y-[1.5rem] overflow-hidden">
@@ -60,7 +68,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <Link href={`/tournament/hok/${1}`} className='flex'>
+      <Link href={`/tournament/hok/${1}`} className='flex bg-bfs_soft-black hover:bg-bfs_primary px-4 py-2 rounded'>
         <p className='flex-1'>5V5 SEASON 1</p>
         <p className='flex-1'>JUNE 20, 2024 - JULY 13, 2024</p>
         <div className='flex-1 flex'>

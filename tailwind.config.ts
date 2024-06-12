@@ -11,6 +11,10 @@ const config = {
   prefix: "",
   theme: {
     extend: {
+      zIndex: {
+        '1': '1',
+        '2': '2'
+      },
       colors: {
         bfs_primary: "#029BDE",
         bfs_secondary: "#FF0198",
