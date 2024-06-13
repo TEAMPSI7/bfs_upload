@@ -1,32 +1,30 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import Link from "next/link";
-import Image from "next/image";
 import axios from 'axios';
+import Image from 'next/image';
 
 interface Participant {
   teamName?: string;  // teamName is optional
   playerId: string;
   name: string;
-  country: string
+  country: string;
   // other properties of Participant
 }
 
-// Sample boxes data (You can replace it with actual data if needed)
-const boxes = [
-  { id: 1, content: "ABCF", teams: ["ASD", "ASD", "ASD", "ASD", "ASD"] },
-  { id: 2, content: "EFG3", teams: ["ASD", "ASD", "ASD", "ASD", "ASD"] },
-  { id: 3, content: "ASD23", teams: ["ASD", "ASD", "ASD", "ASD", "ASD"] },
-  { id: 4, content: "GDSF23", teams: ["ASD", "ASD", "ASD", "ASD", "ASD"] },
-  { id: 5, content: "ECHO23", teams: ["ASD", "ASD", "ASD", "ASD", "ASD"] },
-  { id: 6, content: "FOX49", teams: ["ASD", "ASD", "ASD", "ASD", "ASD"] },
-  { id: 7, content: "EZA12", teams: ["ASD", "ASD", "ASD", "ASD", "ASD"] },
-  { id: 8, content: "QWE23", teams: ["ASD", "ASD", "ASD", "ASD", "ASD"] },
-];
+
+
+const countryToEmoji = (countryCode: string) => {
+  const codePoints = countryCode
+    .toUpperCase()
+    .split('')
+    .map(char => 127397 + char.charCodeAt(0));
+  return String.fromCodePoint(...codePoints);
+};
 
 const Page = () => {
   const [participants, setParticipants] = useState<Participant[]>([]);
-
+  const [hoveredPlayerId, setHoveredPlayerId] = useState<string | null>(null);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -52,66 +50,86 @@ const Page = () => {
   }, {} as { [key: string]: Participant[] });
 
   return (
-    <div className="w-4/5 mx-auto my-10 flex flex-col space-y-[1.5rem] overflow-hidden">
-      <h1 className='text-3xl self-center font-bold'>Honor of Kings</h1>
-      <div className="headerbutton space-x-[25px] ">
-        <button className='rounded bg-primary hover:bg-bfs_primary-dark/30 px-[25px] py-[15px]'>Overview</button>
-        <button className='rounded bg-primary hover:bg-bfs_primary-dark/30 px-[25px] py-[15px]'>5v5</button>
-      </div>
-      <div>
-        <div className='flex'>
-          <p className='flex-1'>Tournament</p>
-          <p className='flex-1'>Date</p>
-          <div className='flex-1 flex'>
-            <p className='flex-1'>PrizePool</p>
-            <p className='flex-1'>Winner</p>
-          </div>
+    <div className='relative h-full min-h-screen bg-cover pb-[2rem] bg-center bg-honor-of-kings'>
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="w-4/5 mx-auto  flex flex-col space-y-[1.5rem] overflow-hidden">
+      <div className='relative flex flex-col items-center mt-8 justify-center'>
+        <h1 className='text-7xl font-bold text-white' style={{ WebkitTextStroke: '1px black' }}>Honor of Kings</h1>
+        <h2 className='text-xl mt-2 font-bold text-white' style={{ WebkitTextStroke: '1px black' }}>5V5 ONLINE TOURNAMENT SEASON 1</h2>
+        <div className='w-full px-4 py-2 mt-[1.5rem]' style={{ 
+          backgroundImage: 'linear-gradient(90deg, rgba(0,0,0,0.8), rgba(255,255,255,0.8), rgba(0,0,0,0.8))',
+          color: '#FFFFFF',
+        }}>
+          <p className='text-white text-3xl text-center z-2 font-bold ' style={{ 
+            color: '#FFFFFF',
+            WebkitTextStroke: '1px black',
+          }}>
+            PARTICIPANTS
+          </p>
         </div>
+       
       </div>
-      <Link href={`/tournament/hok/${1}`} className='flex bg-bfs_soft-black hover:bg-bfs_primary px-4 py-2 rounded'>
-        <p className='flex-1'>5V5 SEASON 1</p>
-        <p className='flex-1'>JUNE 20, 2024 - JULY 13, 2024</p>
-        <div className='flex-1 flex'>
-          <p className='flex-1'>$1000</p>
-          <p className='flex-1'>-</p>
-        </div>
-      </Link>
-
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {Object.keys(teams).map((teamName) => (
-          <div key={teamName} className="relative border h-[300px] rounded shadow overflow-hidden group">
-            <div className="absolute inset-0">
-              <Image 
-                src={`/images/Honor of Kings/${teamName}.jpg`}
-                layout="fill"
-                objectFit="cover"
-                alt={teamName}
-                loading="lazy"
-                className="opacity-70"
-              />
-            </div>
-            <div className="absolute inset-0 flex flex-col justify-end text-center z-10">
-              <div className="absolute inset-0 bg-black bg-opacity-50 hidden group-hover:block z-20"></div>
-              <div className="relative z-30">
-                <div className="hidden group-hover:block bg-white bg-opacity-50 p-4">
-                  {teams[teamName].map((player, index) => (
-                    <div key={player.playerId + index} className="text-black flex space-x-2 hover:border-b hover:border-black">
-                      <p>{player.country}</p>
-                      <p>{player.playerId}</p>
-                      <p>{player.name}</p>
-                    </div>
-                  ))}
+        <div className="relative max-h-[50rem] overflow-y-scroll p-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {Object.keys(teams).map((teamName) => (
+            <div key={teamName}>
+              <div className="relative border h-[200px] rounded shadow group">  
+                <div className="absolute inset-0">
+                  <Image 
+                    src={`/images/Honor of Kings/${teamName}.jpg`}
+                    layout="fill"
+                    objectFit="cover"
+                    alt={teamName}
+                    loading="lazy"
+                    className="opacity-70 absolute inset-0"
+                  />
                 </div>
-                <div className="bg-black bg-opacity-50 p-4">
-                  {teamName}
+                <div className="flex flex-col justify-start text-center z-10">
+                  <div className="absolute inset-0 bg-black bg-opacity-50 hidden group-hover:block z-20"></div>
+                  <div className="relative z-30 flex-grow">
+                    <div className="hidden group-hover:flex justify-between space-x-2 bg-black bg-opacity-50 p-4">
+                      <p className='text-[10px] text-white'>Country</p>
+                      <p className='text-[10px] text-white'>Player #</p>
+                      <p className='text-[10px] text-white'>Player Name</p>
+                    </div>
+                    <div className="hidden group-hover:block justify-between bg-primary-dark bg-opacity-50 p-4">
+                      {teams[teamName].slice(0, 5).map((player, index) => (
+                        <div
+                        key={player.playerId + index}
+                        className="player-info text-accent flex space-x-2 border-b border-white"
+                        onMouseEnter={() => setHoveredPlayerId(player.playerId)}
+                        onMouseLeave={() => setHoveredPlayerId(null)}
+                        style={{
+                          backgroundImage: hoveredPlayerId === player.playerId
+                            ? 'linear-gradient(to right, rgba(255, 0, 0, 0.6), rgba(255, 255, 255, 0.6), rgba(255, 0, 0, 0.6))'
+                            : 'none',
+                        }}
+                      >
+                          <Image 
+                            src={`/images/Flag Rectangle/${player.country}.png`}
+                            width={20}
+                            height={10}
+                            className='h-4/5 self-center'
+                            alt={`${player.country} flag`}
+                          />
+                          <p className='text-[0.8rem] text-stroke text-stroke-black'>{player.playerId}</p>
+                          <p className='text-[0.8rem] text-stroke text-stroke-black'>
+                            {player.name.length > 10 ? `${player.name.substring(0, 10)}...` : player.name}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
+              <div className="text-center">
+                <p className="text-white " style={{ WebkitTextStroke: '0.5px black' }}>{teamName}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Page;

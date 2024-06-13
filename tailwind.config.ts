@@ -11,6 +11,9 @@ const config = {
   prefix: "",
   theme: {
     extend: {
+      backgroundImage: {
+        'honor-of-kings': "url('/images/Honor of Kings/BACKGROUND.jpg')",
+      },
       zIndex: {
         '1': '1',
         '2': '2'
