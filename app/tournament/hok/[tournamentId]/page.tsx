@@ -109,10 +109,10 @@ const Page = () => {
                             width={20}
                             height={10}
                             className='h-4/5 self-center'
-                            alt={`${player.country} flag`}
+                            alt={`${player.country}`}
                           />
                           <p className='text-[0.8rem] text-stroke text-stroke-black'>{player.playerId}</p>
-                          <p className='text-[0.8rem] text-stroke text-stroke-black'>
+                          <p className='text-[0.8rem]  text-stroke text-stroke-black'>
                             {player.name.length > 10 ? `${player.name.substring(0, 10)}...` : player.name}
                           </p>
                         </div>
@@ -122,7 +122,7 @@ const Page = () => {
                 </div>
               </div>
               <div className="text-center">
-                <p className="text-white " style={{ WebkitTextStroke: '0.5px black' }}>{teamName}</p>
+                <p className="text-white font-bold " style={{ WebkitTextStroke: '0.8px black' }}>{teamName}</p>
               </div>
             </div>
           ))}
