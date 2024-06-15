@@ -50,8 +50,8 @@ const Page = () => {
   }, {} as { [key: string]: Participant[] });
 
   return (
-    <div className='relative h-full min-h-screen bg-cover pb-[2rem] bg-center bg-honor-of-kings'>
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+    <div className='relative h-full min-h-screen bg-cover pb-[2rem] bg-center bg-white'>
+      {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
       <div className="w-4/5 mx-auto  flex flex-col space-y-[1.5rem] overflow-hidden">
       <div className='relative flex flex-col items-center mt-8 justify-center'>
         <h1 className='text-7xl font-bold text-white' style={{ WebkitTextStroke: '1px black' }}>Honor of Kings</h1>
@@ -69,19 +69,24 @@ const Page = () => {
         </div>
        
       </div>
-        <div className="relative max-h-[50rem] overflow-y-scroll p-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="relative max-h-[50rem] overflow-y-scroll p-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-8">
           {Object.keys(teams).map((teamName) => (
             <div key={teamName}>
-              <div className="relative border h-[200px] rounded shadow group">  
-                <div className="absolute inset-0">
-                  <Image 
-                    src={`/images/Honor of Kings/${teamName}.jpg`}
+              <div className="relative h-[100px] rounded shadow group ">  
+                <div className="absolute inset-0"  style={{
+                  backgroundImage: `url('/images/Honor of Kings/EXTRACTION PH(1).jpg')`,
+                  backgroundSize: '100% 100%',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                }}>
+                  {/* <Image 
+                    // src={`/images/Honor of Kings/${teamName}.jpg`}
                     layout="fill"
                     objectFit="cover"
                     alt={teamName}
                     loading="lazy"
-                    className="opacity-70 absolute inset-0"
-                  />
+                    className="opacity-70 h-full w-full absolute inset-0"
+                  /> */}
                 </div>
                 <div className="flex flex-col justify-start text-center z-10">
                   <div className="absolute inset-0 bg-black bg-opacity-50 hidden group-hover:block z-20"></div>
@@ -121,9 +126,9 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-              <div className="text-center">
+              {/* <div className="text-center">
                 <p className="text-white font-bold " style={{ WebkitTextStroke: '0.8px black' }}>{teamName}</p>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

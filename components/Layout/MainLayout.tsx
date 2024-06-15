@@ -212,7 +212,7 @@ export default function MainLayout({
         <section className="mt-4 w-full md:mt-1 overflow-hidden">{children}</section>
 
         <Footer />
-        <SponsorMarquee />
+        <SponsorMarquee  />
       </div>
     </main>
   );
