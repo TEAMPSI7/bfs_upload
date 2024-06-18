@@ -69,7 +69,7 @@ const Page = () => {
         </div>
        
       </div>
-        <div className="relative max-h-[50rem] overflow-y-scroll p-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5">
+        <div className="relative p-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5">
           {Object.keys(teams).map((teamName) => (
            <div key={teamName} className='bg-white '>
               <div className="relative h-[225px] rounded shadow group ">  
@@ -91,11 +91,11 @@ const Page = () => {
                   }}>
                     <Image 
                       src={`/images/HOK TEAMS/${teamName}.png`}
-                      height={100}
-                      width={100}
+                      height={140}
+                      width={140}
                       alt={teamName}
                       loading="lazy"
-                      className="opacity-70 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                      className=" absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
                     />
 
                   </div>
@@ -141,7 +141,7 @@ const Page = () => {
                 </div>
               </div>
               <div className="flex justify-center py-[2rem]  items-center">
-                <p className="text-white font-bold " style={{ WebkitTextStroke: '0.8px black' }}>{teamName}</p>
+                <p className="w-[15ch] text-center text-black/70 font-bold text-[0.8rem]" style={{ WebkitTextStroke: '0.8px black' }}>{teamName}</p>
               </div>
             </div>
           ))}
