@@ -50,13 +50,13 @@ const Page = () => {
   }, {} as { [key: string]: Participant[] });
 
   return (
-    <div className='relative h-full min-h-screen bg-cover pb-[2rem] bg-center bg-white'>
+    <div className='relative h-full min-h-screen bg-cover pb-[2rem] bg-center bg-white/80'>
       {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
-      <div className="w-4/5 mx-auto  flex flex-col space-y-[1.5rem] overflow-hidden">
+      <div className="w-[90%] mx-auto  flex flex-col space-y-[1.5rem] overflow-hidden">
       <div className='relative flex flex-col items-center mt-8 justify-center'>
         <h1 className='text-7xl font-bold text-white' style={{ WebkitTextStroke: '1px black' }}>Honor of Kings</h1>
         <h2 className='text-xl mt-2 font-bold text-white' style={{ WebkitTextStroke: '1px black' }}>5V5 ONLINE TOURNAMENT SEASON 1</h2>
-        <div className='w-full px-4 py-2 mt-[1.5rem]' style={{ 
+        <div className='w-full mt-[1.5rem]' style={{ 
           backgroundImage: 'linear-gradient(90deg, rgba(0,0,0,0.8), rgba(255,255,255,0.8), rgba(0,0,0,0.8))',
           color: '#FFFFFF',
         }}>
@@ -69,24 +69,37 @@ const Page = () => {
         </div>
        
       </div>
-        <div className="relative max-h-[50rem] overflow-y-scroll p-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-8">
+        <div className="relative max-h-[50rem] overflow-y-scroll p-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5">
           {Object.keys(teams).map((teamName) => (
-            <div key={teamName}>
-              <div className="relative h-[100px] rounded shadow group ">  
-                <div className="absolute inset-0"  style={{
-                  backgroundImage: `url('/images/Honor of Kings/EXTRACTION PH(1).jpg')`,
+           <div key={teamName} className='bg-white '>
+              <div className="relative h-[225px] rounded shadow group ">  
+                <div className="absolute inset-0"  
+                style={{
+                  backgroundImage: `url('/images/Honor of Kings/background.png')`,
                   backgroundSize: '100% 100%',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat',
-                }}>
-                  {/* <Image 
-                    // src={`/images/Honor of Kings/${teamName}.jpg`}
-                    layout="fill"
-                    objectFit="cover"
-                    alt={teamName}
-                    loading="lazy"
-                    className="opacity-70 h-full w-full absolute inset-0"
-                  /> */}
+            
+                }}
+                >
+                  <div className="absolute inset-0" style={{
+                  backgroundImage: ` url('/images/Honor of Kings/border.png')`,
+                  backgroundSize: '100% 100%',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+            
+                  }}>
+                    <Image 
+                      src={`/images/Honor of Kings/${teamName}.jpg`}
+                      // src={'/images/Honor of Kings/EXTRACTION PH.jpg'}
+                      layout="fill"
+                      // objectFit="cover"
+                      alt={teamName}
+                      loading="lazy"
+                      className="opacity-70 h-[100%] w-[100%] absolute inset-0"
+                    />
+                  </div>
+                 
                 </div>
                 <div className="flex flex-col justify-start text-center z-10">
                   <div className="absolute inset-0 bg-black bg-opacity-50 hidden group-hover:block z-20"></div>
@@ -111,6 +124,7 @@ const Page = () => {
                       >
                           <Image 
                             src={`/images/Flag Rectangle/${player.country}.png`}
+                            // src={'/images/Honor of Kings/EXTRACTION PH.jpg'}
                             width={20}
                             height={10}
                             className='h-4/5 self-center'
@@ -126,9 +140,9 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-              {/* <div className="text-center">
+              <div className="flex justify-center py-[2rem]  items-center">
                 <p className="text-white font-bold " style={{ WebkitTextStroke: '0.8px black' }}>{teamName}</p>
-              </div> */}
+              </div>
             </div>
           ))}
         </div>
