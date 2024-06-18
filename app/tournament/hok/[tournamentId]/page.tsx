@@ -90,14 +90,14 @@ const Page = () => {
             
                   }}>
                     <Image 
-                      src={`/images/Honor of Kings/${teamName}.png`}
-                      // src={'/images/Honor of Kings/EXTRACTION PH.jpg'}
-                      layout="fill"
-                      // objectFit="cover"
+                      src={`/images/HOK TEAMS/${teamName}.png`}
+                      height={100}
+                      width={100}
                       alt={teamName}
                       loading="lazy"
-                      className="opacity-70 h-[100%] w-[100%] absolute inset-0"
+                      className="opacity-70 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
                     />
+
                   </div>
                  
                 </div>
