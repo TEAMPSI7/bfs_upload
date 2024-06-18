@@ -90,7 +90,7 @@ const Page = () => {
             
                   }}>
                     <Image 
-                      src={`/images/Honor of Kings/${teamName}.jpg`}
+                      src={`/images/Honor of Kings/${teamName}.png`}
                       // src={'/images/Honor of Kings/EXTRACTION PH.jpg'}
                       layout="fill"
                       // objectFit="cover"
