@@ -1,7 +1,7 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 // This is a mock function to fetch game data by ID. Replace it with your actual data fetching logic.
-const fetchGameById = async (id : any) => {
+const fetchGameById = async (id: string) => {
   // Replace with actual API call or data fetching logic
   const games = [
     { id: '1', name: 'CODM', image: '/images/TOPUP/CODM_BIG.jpg' },
@@ -19,7 +19,17 @@ const fetchAllGames = async () => {
   ];
 };
 
-const DynamicPage = ({ game } :any) => {
+export async function generateStaticParams() {
+  const games = await fetchAllGames();
+
+  return games.map(game => ({
+    gamesId: game.id.toString(),
+  }));
+}
+
+const DynamicPage = async ({ params }: { params: { gamesId: string } }) => {
+  const game = await fetchGameById(params.gamesId);
+
   if (!game) {
     return <div>Game not found</div>;
   }
@@ -106,32 +116,5 @@ const DynamicPage = ({ game } :any) => {
     </div>
   );
 };
-
-// Fetch data for the static paths
-export async function getStaticProps({ params } : any) {
-  const { gamesId } = params;
-  
-  const game = await fetchGameById(gamesId);
-
-  return {
-    props: {
-      game,
-    },
-  };
-}
-
-// Generate static paths for dynamic routes
-export async function generateStaticParams() {
-  const games = await fetchAllGames();
-
-  const paths = games.map(game => ({
-    params: { gamesId: game.id.toString() },
-  }));
-
-  return {
-    paths,
-    fallback: false, // or true if you want to enable incremental static regeneration
-  };
-}
 
 export default DynamicPage;
