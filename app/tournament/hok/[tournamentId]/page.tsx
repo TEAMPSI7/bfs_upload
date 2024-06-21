@@ -14,13 +14,26 @@ interface Participant {
 
 
 
-const countryToEmoji = (countryCode: string) => {
-  const codePoints = countryCode
-    .toUpperCase()
-    .split('')
-    .map(char => 127397 + char.charCodeAt(0));
-  return String.fromCodePoint(...codePoints);
+const fetchTournamentById = async (id: string) => {
+  // Replace this with actual data fetching logic
+  const response = await axios.get(`https://api.example.com/tournament/${id}`);
+  return response.data;
 };
+
+const fetchAllTournamentIds = async () => {
+  // Replace this with actual data fetching logic
+  const response = await axios.get('https://api.example.com/tournaments');
+  return response.data.map((tournament: { id: string }) => ({ id: tournament.id }));
+};
+
+export async function generateStaticParams() {
+  const tournaments = await fetchAllTournamentIds();
+
+  return tournaments.map((tournament : any) => ({
+    tournamentId: tournament.id,
+  }));
+}
+
 
 const Page = () => {
   const [participants, setParticipants] = useState<Participant[]>([]);
