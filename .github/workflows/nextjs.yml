@@ -54,7 +54,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -65,10 +64,12 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
+            .bun
+            node_modules
             .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lockb', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lockb', '**/yarn.lock') }}-
+            ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}-
 
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.runner }} install
