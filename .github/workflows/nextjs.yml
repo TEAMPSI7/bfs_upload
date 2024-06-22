@@ -54,9 +54,6 @@ jobs:
       - name: Build with Next.js
         run: bun next build
 
-      - name: Export static files
-        run: bun next export
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
