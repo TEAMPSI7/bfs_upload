@@ -5,7 +5,7 @@ const nextConfig = {
   images: {
       unoptimized: true,
   },
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/your-repo-name/' : '',  // Set the asset prefix for GitHub Pages
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/bfs-official/' : '',  // Set the asset prefix for GitHub Pages
 };
 
 export default nextConfig;
