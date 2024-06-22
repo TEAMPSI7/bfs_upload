@@ -75,7 +75,7 @@ const Page = () => {
               <div className="relative h-[225px] rounded shadow group ">  
                 <div className="absolute inset-0"  
                 style={{
-                  backgroundImage: `url('/images/Honor of Kings/background(1).png')`,
+                  backgroundImage: `url('/public/images/Honor of Kings/background(1).png')`,
                   backgroundSize: '100% 100%',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat',
@@ -83,7 +83,7 @@ const Page = () => {
                 }}
                 >
                   <div className="absolute inset-0" style={{
-                  backgroundImage: ` url('/images/Honor of Kings/border.png')`,
+                  backgroundImage: ` url('/public/images/Honor of Kings/border.png')`,
                   backgroundSize: '100% 100%',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat',
@@ -98,7 +98,7 @@ const Page = () => {
                       className=" absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
                     /> : 
                     <Image 
-                      src={`/images/HOK TEAMS/${teamName}.png`}
+                      src={`/public/images/HOK TEAMS/${teamName}.png`}
                       height={90}
                       width={90}
                       alt={teamName}
