@@ -31,7 +31,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "14"  # Adjust Node.js version as needed
+          node-version: "20"  # Adjust Node.js version as needed
 
       - name: Install dependencies
         run: bun install
