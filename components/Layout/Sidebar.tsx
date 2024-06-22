@@ -6,6 +6,7 @@
   import { ArrowLeft, ArrowRight, ChevronRight  } from "lucide-react";
   import { usePathname } from "next/navigation";
   import '../CSS/footer.css'
+  import logo from "@/public/images/logo.png";
 
   function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(" ");
@@ -153,7 +154,8 @@
             <div className={`transition-all duration-500${open ? "p-4" : ""}`}>
               <Link href="/">
                 <Image
-                  src="/images/logo.png"
+                  // src="https://raw.githubusercontent.com/TEAMPSI7/bfs_upload/main/public/images/logo.png"
+                  src={logo}
                   alt="LOGO"
                   width={1080}
                   height={1080}
