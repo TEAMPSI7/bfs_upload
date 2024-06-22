@@ -90,7 +90,7 @@ const Page = () => {
             
                   }}>
                    {teamName != "VOIN ALLIANCE" ? <Image 
-                      src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/HOK TEAMS/${teamName}.png`}
+                      src={`/images/HOK TEAMS/${teamName}.png`}
                       height={140}
                       width={140}
                       alt={teamName}
@@ -98,7 +98,7 @@ const Page = () => {
                       className=" absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
                     /> : 
                     <Image 
-                      src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/HOK TEAMS/${teamName}.png`}
+                      src={`/images/HOK TEAMS/${teamName}.png`}
                       height={90}
                       width={90}
                       alt={teamName}
