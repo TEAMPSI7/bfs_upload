@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  distDir: 'out',  // Ensure the output directory is 'out'
+  distDir: 'out',  // Specify the output directory
   images: {
-      unoptimized: true,
+      unoptimized: true,  // Necessary for static export
   },
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/bfs-official/' : '',  // Set the asset prefix for GitHub Pages
+  basePath: process.env.NODE_ENV === 'production' ? '/bfs_official' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/bfs_official/' : '',  // Adjust for GitHub Pages
 };
 
 export default nextConfig;
